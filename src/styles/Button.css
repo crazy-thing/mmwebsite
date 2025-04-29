@@ -1,0 +1,25 @@
+.button {
+    width: 36vh;
+    height: 6.62vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5%;
+
+    background: #1e1e1e;
+    border-radius: 51px;
+    cursor: pointer;
+}
+
+.button-icon {
+    width: 4.85vh;
+    height: 4.85vh;
+}
+
+.button-text {
+    margin: 0;
+    font-family: 'Anton', sans-serif;
+    font-size: 3vh;
+    color: #fff;
+}

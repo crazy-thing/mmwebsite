@@ -1,0 +1,23 @@
+.linux-installers {
+    margin-top: 12.5vh;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4vh;
+}
+
+.linux-installers-title {
+    margin: 0;
+    font-family: 'Anton', sans-serif;
+    text-decoration: underline;
+    font-size: 5vh;
+    color: #fff;
+}
+
+.linux-installers-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 2.1vw;
+}
