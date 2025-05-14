@@ -5,12 +5,11 @@ interface ButtonProps {
     onClick: () => void;
     icon: any;
     text: string;
-    style: any;
 };
 
-const Button: React.FC<ButtonProps> = ({ onClick, icon, text, style = null}) => {
+const Button: React.FC<ButtonProps> = ({ onClick, icon, text}) => {
   return (
-    <div className='button' onClick={onClick} style={style ? style : null}>
+    <div className='button' onClick={onClick}>
         <img className='button-icon' src={icon} />
         <p className='button-text'>{text}</p>   
     </div>

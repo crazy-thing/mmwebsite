@@ -1,14 +1,15 @@
 .button {
-    width: 36vh;
-    height: 6.62vh;
+    width: 41vh;
+    height: 7.8vh;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     gap: 5%;
 
-    background: #1e1e1e;
-    border-radius: 51px;
+    background: #2f2f2f;
+    border-radius: 1.11vh;
+    border: 0.37vh solid #fff;
     cursor: pointer;
 }
 

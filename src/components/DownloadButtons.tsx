@@ -11,18 +11,13 @@ interface DownloadButtonsProps {
   macInstaller: any;
 };
 
-const windowButtonStyle = {
-  width: '40vh',
-};
 
 const DownloadButtons: React.FC<DownloadButtonsProps> = ({ onClick, windowsInstaller, macInstaller  }) => {
   return (
     <div className='download-buttons'>
-        <Button onClick={() => window.open(windowsInstaller.downloadUrl, '_blank')} icon={windows} text='Download for Windows' style={windowButtonStyle}/>
-        <div className='download-buttons-bottom'>
-            <Button onClick={() => window.open(macInstaller.downloadUrl, '_blank')} icon={mac} text='Download for MacOS' style={null}/>
-            <Button onClick={onClick} icon={linux} text='Download for Linux' style={null}/>
-        </div>
+        <Button onClick={() => window.open(windowsInstaller.downloadUrl, '_blank')} icon={windows} text='Download for Windows' />
+        <Button onClick={() => window.open(macInstaller.downloadUrl, '_blank')} icon={mac} text='Download for MacOS' />
+        <Button onClick={onClick} icon={linux} text='Download for Linux' />
     </div>
   )
 };

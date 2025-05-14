@@ -4,40 +4,57 @@ import logo from './assets/MML_Title.png';
 import DownloadButtons from './components/DownloadButtons';
 import LinuxInstallers from './components/LinuxInstallers';
 import { fetchAllReleases } from './util/downloader';
+import ReadMe from './components/ReadMe';
+import { Installer } from './types/Installer';
 
 function App() {
   const [showInstallers, setShowInstallers] = useState(false);
-  const [windowsInstaller, setWindowsInstaller] = useState(null);
-  const [macInstaller, setMacInstaller] = useState(null);
-  const [linuxDebInstaller, setLinuxDebInstaller] = useState(null);
-  const [linuxRpmInstaller, setLinuxRpmInstaller] = useState(null);
-  const [linuxPacmanInstaller, setLinuxPacmanInstaller] = useState(null);
+
+  const [windowsInstaller, setWindowsInstaller] = useState<Installer | null>(null);
+  const [macInstaller, setMacInstaller] = useState<Installer | null>(null);
+  const [linuxDebInstaller, setLinuxDebInstaller] = useState<Installer | null>(null);
+  const [linuxRpmInstaller, setLinuxRpmInstaller] = useState<Installer | null>(null);
+  const [linuxPacmanInstaller, setLinuxPacmanInstaller] = useState<Installer | null>(null);
 
   useEffect(() => {
     fetchAllReleases("crazy-thing", "mml").then(releases => {
-      if (releases.length > 0) {
-        const latestRelease = releases[0];
-        setWindowsInstaller(latestRelease.assets.windows);
-        setMacInstaller(latestRelease.assets.mac);
-        setLinuxDebInstaller(latestRelease.assets.linuxDeb);
-        setLinuxRpmInstaller(latestRelease.assets.linuxRpm);
-        setLinuxPacmanInstaller(latestRelease.assets.linuxPacman);
-      }
+      setWindowsInstaller(releases.windows ? releases.windows.asset : null);
+      setMacInstaller(releases.mac ? releases.mac.asset : null);
+      setLinuxDebInstaller(releases.linuxDeb ? releases.linuxDeb.asset : null);
+      setLinuxRpmInstaller(releases.linuxRpm ? releases.linuxRpm.asset : null);
+      setLinuxPacmanInstaller(releases.linuxPacman ? releases.linuxPacman.asset : null);
     });
   }, []);
 
   return (
     <div className='app'>
-      <div className='app-background' />
-      <img src={logo} alt='logo' className='app-logo' onClick={() => setShowInstallers(false)} />
+      <img 
+        src={logo} 
+        alt='logo' 
+        className='app-logo' 
+        onClick={() => setShowInstallers(false)} 
+      />
 
-      {showInstallers ? (
-        <LinuxInstallers linuxDebInstaller={linuxDebInstaller} linuxRpmInstaller={linuxRpmInstaller} linuxPacmanInstaller={linuxPacmanInstaller} />
-      ) : (
-        <DownloadButtons onClick={() => setShowInstallers(true)} windowsInstaller={windowsInstaller} macInstaller={macInstaller} />
-      )}
+      <div className='app__bottom'>
+        <div className='app__bottom-info'>
+          <ReadMe />
+        </div>
+        {showInstallers ? (
+          <LinuxInstallers 
+            linuxDebInstaller={linuxDebInstaller} 
+            linuxRpmInstaller={linuxRpmInstaller} 
+            linuxPacmanInstaller={linuxPacmanInstaller} 
+          />
+        ) : (
+          <DownloadButtons 
+            onClick={() => setShowInstallers(true)} 
+            windowsInstaller={windowsInstaller} 
+            macInstaller={macInstaller} 
+          />
+        )}
+      </div>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

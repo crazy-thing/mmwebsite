@@ -1,15 +1,8 @@
 .download-buttons {
-    margin-top: 14vh;
     background: transparent;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 4vh;
-}
-
-.download-buttons-bottom {
-    display: flex;
-    flex-direction: row;
-    gap: 2.1vw;
+    gap: 2.7vh;
 }

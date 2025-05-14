@@ -42,4 +42,28 @@ body {
   overflow: hidden;
   margin: 0;
   padding: 0;
+  background: #1a1a1a;
+}
+
+.app__bottom {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 86%;
+  padding: 0 7%;
+  height: 70%;
+}
+
+.app__bottom-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 71vh;
+  height: 40vh;
+  border-radius: 1.3vh;
+  border: 0.55vh solid #aaaaaa;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  overflow-y: auto;
 }
