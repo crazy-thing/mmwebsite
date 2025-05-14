@@ -24,12 +24,28 @@
   filter: blur(4px);
 }
 
+.app-logo-wrapper {
+  position: relative;
+  display: flex;
+  align-self: flex-start!important;
+  height: 20vh;
+  width: 151vh;
+  margin-top: 14.6vh;
+  margin-left: 2.8vh;
+}
+
 .app-logo {
-  margin-top: 10vh;
-  height: 35vh;
-
+  width: 148vh;
+  height: 20vh;
   cursor: pointer;
+}
 
+.app-logo-box {
+  position: absolute;
+  width: 4.2vh;
+  height: 4.2vh;
+  bottom: 0;
+  right: 0;
 }
 
 #root {

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import './App.css';
-import logo from './assets/MML_Title.png';
+import logo from './assets/mml_logo.png';
+import logoBox from './assets/mml_logo_box.png';
 import DownloadButtons from './components/DownloadButtons';
 import LinuxInstallers from './components/LinuxInstallers';
 import { fetchAllReleases } from './util/downloader';
@@ -28,12 +29,20 @@ function App() {
 
   return (
     <div className='app'>
-      <img 
-        src={logo} 
-        alt='logo' 
-        className='app-logo' 
-        onClick={() => setShowInstallers(false)} 
-      />
+      <div className='app-logo-wrapper'>
+        <img 
+          src={logo} 
+          alt='logo' 
+          className='app-logo' 
+          onClick={() => setShowInstallers(false)} 
+        />
+        <img 
+          src={logoBox}
+          alt='logo-box'
+          className='app-logo-box'
+        />
+      </div>
+
 
       <div className='app__bottom'>
         <div className='app__bottom-info'>
