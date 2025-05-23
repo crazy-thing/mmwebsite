@@ -10,6 +10,9 @@ export interface Release {
   body: string;
   html_url: string;
   assets: Asset[];
+  target_commitish: string; 
+  draft?: boolean;
+  prerelease?: boolean;
 }
 
 export interface PlatformRelease {
