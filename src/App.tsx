@@ -7,6 +7,7 @@ import LinuxInstallers from './components/LinuxInstallers';
 import { fetchAllReleases } from './util/downloader';
 import ReadMe from './components/ReadMe';
 import { Installer } from './types/Installer';
+import ScreenshotViewer from './components/ScreenshotViewer';
 
 function App() {
   const [showInstallers, setShowInstallers] = useState(false);
@@ -46,7 +47,11 @@ function App() {
 
       <div className='app__bottom'>
         <div className='app__bottom-info'>
-          <ReadMe />
+          <ScreenshotViewer
+            apiUrl="http://dev.minecraftmigos.tech/example/v1/screenshots"
+            uploadsUrl='http://dev.minecraftmigos.tech/uploads/screenshots'
+            intervalMs={5000}
+          />
         </div>
         {showInstallers ? (
           <LinuxInstallers 

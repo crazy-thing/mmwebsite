@@ -29,13 +29,13 @@
   display: flex;
   align-self: flex-start!important;
   height: 20vh;
-  width: 151vh;
+  width: 170vh;
   margin-top: 14.6vh;
   margin-left: 2.8vh;
 }
 
 .app-logo {
-  width: 148vh;
+  width: 165vh;
   height: 20vh;
   cursor: pointer;
 }
