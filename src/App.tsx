@@ -5,7 +5,6 @@ import logoBox from './assets/mml_logo_box.png';
 import DownloadButtons from './components/DownloadButtons';
 import LinuxInstallers from './components/LinuxInstallers';
 import { fetchAllReleases } from './util/downloader';
-import ReadMe from './components/ReadMe';
 import { Installer } from './types/Installer';
 import ScreenshotViewer from './components/ScreenshotViewer';
 
