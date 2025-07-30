@@ -47,8 +47,8 @@ function App() {
       <div className='app__bottom'>
         <div className='app__bottom-info'>
           <ScreenshotViewer
-            apiUrl="https://dev.minecraftmigos.tech/example/v1/screenshots"
-            uploadsUrl='https://dev.minecraftmigos.tech/uploads/screenshots'
+            apiUrl="https://minecraftmigos.tech/example/v1/screenshots"
+            uploadsUrl='https://minecraftmigos.tech/uploads/screenshots'
             intervalMs={5000}
           />
         </div>
