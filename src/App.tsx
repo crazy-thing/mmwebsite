@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import './App.css';
-import logo from './assets/mml_logo.png';
-import logoBox from './assets/mml_logo_box.png';
+import logo from './assets/mm_logo.svg';
 import DownloadButtons from './components/DownloadButtons';
 import LinuxInstallers from './components/LinuxInstallers';
 import { fetchAllReleases } from './util/downloader';
@@ -29,6 +28,7 @@ function App() {
 
   return (
     <div className='app'>
+      <div className='app-background'></div>
       <div className='app-logo-wrapper'>
         <img 
           src={logo} 
@@ -36,22 +36,10 @@ function App() {
           className='app-logo' 
           onClick={() => setShowInstallers(false)} 
         />
-        <img 
-          src={logoBox}
-          alt='logo-box'
-          className='app-logo-box'
-        />
       </div>
 
 
       <div className='app__bottom'>
-        <div className='app__bottom-info'>
-          <ScreenshotViewer
-            apiUrl="https://minecraftmigos.tech/example/v1/screenshots"
-            uploadsUrl='https://minecraftmigos.tech/uploads/screenshots'
-            intervalMs={5000}
-          />
-        </div>
         {showInstallers ? (
           <LinuxInstallers 
             linuxDebInstaller={linuxDebInstaller} 
@@ -65,6 +53,13 @@ function App() {
             macInstaller={macInstaller} 
           />
         )}
+        <div className='app__bottom-info'>
+          <ScreenshotViewer
+            apiUrl="https://minecraftmigos.tech/example/v1/screenshots"
+            uploadsUrl='https://minecraftmigos.tech/uploads/screenshots'
+            intervalMs={5000}
+          />
+        </div>
       </div>
     </div>
   );

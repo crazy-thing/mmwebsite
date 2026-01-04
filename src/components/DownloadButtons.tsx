@@ -15,9 +15,9 @@ interface DownloadButtonsProps {
 const DownloadButtons: React.FC<DownloadButtonsProps> = ({ onClick, windowsInstaller, macInstaller  }) => {
   return (
     <div className='download-buttons'>
-        <Button onClick={() => window.open(windowsInstaller.downloadUrl, '_blank')} icon={windows} text='Download for Windows' />
-        <Button onClick={() => window.open(macInstaller.downloadUrl, '_blank')} icon={mac} text='Download for MacOS' />
-        <Button onClick={onClick} icon={linux} text='Download for Linux' />
+        <Button onClick={() => window.open(windowsInstaller.downloadUrl)} icon={windows} color='#2A4968' borderColor='#0CF' text='WINDOWS' />
+        <Button onClick={() => window.open(macInstaller.downloadUrl)} icon={mac} color='#365626' borderColor='#00FF6F' text='MACOS' />
+        <Button onClick={onClick} icon={linux} color='#4D2344' borderColor='#D400FF' text='LINUX' />
     </div>
   )
 };

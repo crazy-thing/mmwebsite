@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import '../styles/ScreenshotViewer.css';
+import arrow from '../assets/arrow.svg';
 
 interface ScreenshotViewerProps {
   apiUrl: string;
@@ -7,7 +8,7 @@ interface ScreenshotViewerProps {
   intervalMs?: number;
 }
 
-const ScreenshotViewer: React.FC<ScreenshotViewerProps> = ({ apiUrl, uploadsUrl, intervalMs = 5000 }) => {
+const ScreenshotViewer: React.FC<ScreenshotViewerProps> = ({ apiUrl, uploadsUrl = '', intervalMs = 5000 }) => {
   const [images, setImages] = useState<string[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [prevIndex, setPrevIndex] = useState<number | null>(null);
@@ -69,15 +70,21 @@ const ScreenshotViewer: React.FC<ScreenshotViewerProps> = ({ apiUrl, uploadsUrl,
           key={i}
           src={`${uploadsUrl}/${img}`}
           alt={`Screenshot ${i}`}
-          className={getImageClass(i)}
+          className={`screenshot-viewer-image ${getImageClass(i)}`}
         />
       ))}
 
-      <button className="nav-arrow left" onClick={() => goTo((currentIndex - 1 + images.length) % images.length)}>
-        &lt;
+      <button
+        className="nav-arrow left"
+        onClick={() => goTo((currentIndex - 1 + images.length) % images.length)}
+      >
+        <img src={arrow} alt="Previous" className='nav-arrow-icon' />
       </button>
-      <button className="nav-arrow right" onClick={() => goTo((currentIndex + 1) % images.length)}>
-        &gt;
+      <button
+        className="nav-arrow right"
+        onClick={() => goTo((currentIndex + 1) % images.length)}
+      >
+        <img src={arrow} alt="Next" className='nav-arrow-icon' style={{ transform: 'rotate(180deg)' }} />
       </button>
 
       <div className="dots-container">

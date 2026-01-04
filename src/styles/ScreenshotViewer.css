@@ -1,47 +1,47 @@
 .screenshot-viewer {
   position: relative;
   width: 100%;
-  height: 100%;
+  aspect-ratio: 16/9;
   overflow: hidden;
   background: #000;
 }
 
 /* Shared base styles */
-.screenshot-viewer img {
+.screenshot-viewer .screenshot-viewer-image {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: fill;
-  transition: transform 0.4s ease;
+  object-fit: cover; 
+  transition: transform 0.4s ease, opacity 0.4s ease;
   z-index: 1;
   pointer-events: none;
   opacity: 1;
 }
 
-img.center {
+.screenshot-viewer-image.center {
   transform: translateX(0%);
   z-index: 2;
   pointer-events: auto;
 }
 
-img.exit-left {
+.screenshot-viewer-image.exit-left {
   transform: translateX(-100%);
   z-index: 1;
 }
 
-img.exit-right {
+.screenshot-viewer-image.exit-right {
   transform: translateX(100%);
   z-index: 1;
 }
 
-img.off-left {
+.screenshot-viewer-image.off-left {
   transform: translateX(-100%);
   z-index: 0;
 }
 
-img.off-right {
+.screenshot-viewer-image.off-right {
   transform: translateX(100%);
   z-index: 0;
 }
@@ -50,44 +50,53 @@ img.off-right {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 3rem;
-  color: white;
-  background: rgba(0, 0, 0, 0.4);
-  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 3.125vw;      
+  height: 3.125vw;     
+  font-size: 2rem;
+  border-radius: 50%;
+  border: 0.26042vw solid rgba(255, 255, 255, 0.63);
+  background: rgba(255, 255, 255, 0.37);
+  backdrop-filter: blur(0.33333vw);
   cursor: pointer;
-  padding: 1rem;
   z-index: 10;
   transition: background 0.3s ease;
 }
 
 .nav-arrow:hover {
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(217, 217, 217, .7);
 }
 
 .nav-arrow.left {
-  left: 0;
-  border-radius: 0 6px 6px 0;
+  left: 1vw; 
 }
 
 .nav-arrow.right {
-  right: 0;
-  border-radius: 6px 0 0 6px;
+  right: 1vw;
 }
 
-/* Dots */
+.nav-arrow-icon {
+  width: 1.5vw; 
+  height: 1.5vw;
+
+}
+
 .dots-container {
   position: absolute;
-  bottom: 20px;
+  bottom: 1.04167vw; 
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  gap: 10px;
+  gap: 0.52083vw; 
   z-index: 10;
 }
 
 .dot {
-  width: 14px;
-  height: 14px;
+  width: 0.72917vw;  
+  height: 0.72917vw; 
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 50%;
   cursor: pointer;

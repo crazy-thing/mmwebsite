@@ -16,9 +16,9 @@ const LinuxInstallers: React.FC<LinuxInstallerProps> = ({ linuxDebInstaller, lin
     <div className='linux-installers'>
         <p className='linux-installers-title'>Linux Installers</p>
         <div className='linux-installers-buttons'>
-            <Button onClick={() => window.open(linuxDebInstaller.downloadUrl, '_blank')} icon={deb} text='.deb Installer' />
-            <Button onClick={() => window.open(linuxRpmInstaller.downloadUrl, '_blank')} icon={rpm} text='.rpm Installer' />
-            <Button onClick={() => window.open(linuxPacmanInstaller.downloadUrl, '_blank')} icon={pacman} text='.pacman Installer'/>
+            <Button onClick={() => window.open(linuxDebInstaller.downloadUrl, '_blank')} icon={deb} color='#4D2344' borderColor='#D400FF' text='deb' />
+            <Button onClick={() => window.open(linuxRpmInstaller.downloadUrl, '_blank')} icon={rpm} color='#4D2344' borderColor='#D400FF' text='rpm' />
+            <Button onClick={() => window.open(linuxPacmanInstaller.downloadUrl, '_blank')} icon={pacman} color='#4D2344' borderColor='#D400FF' text='pacman'/>
         </div>
     </div>
   )

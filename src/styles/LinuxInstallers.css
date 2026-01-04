@@ -4,13 +4,14 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: start;
     gap: 2vh;
 }
 
 .linux-installers-title {
     position: absolute;
     justify-self: center;
+    min-width: max-content;
     top: -8.5vh;
     margin: 0;
     font-family: 'Anton', sans-serif;
@@ -24,6 +25,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     gap: 2.7vh;
 }

@@ -16,7 +16,7 @@
   left: -5%;
   width: 110%;
   height: 110%;
-  background-image: url('./assets//mainBg.png');
+  background-image: url('./assets/mmbg.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -28,24 +28,14 @@
   position: relative;
   display: flex;
   align-self: flex-start!important;
-  height: 20vh;
-  width: 170vh;
-  margin-top: 14.6vh;
-  margin-left: 2.8vh;
+  margin-top: 5.6vh;
+  margin-left: 10vh;
 }
 
 .app-logo {
-  width: 165vh;
-  height: 20vh;
+  width: 57vw;
+  height: 19vw;
   cursor: pointer;
-}
-
-.app-logo-box {
-  position: absolute;
-  width: 4.2vh;
-  height: 4.2vh;
-  bottom: 0;
-  right: 0;
 }
 
 #root {

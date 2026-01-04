@@ -1,26 +1,33 @@
 .button {
-    width: 41vh;
-    height: 7.8vh;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 5%;
-
-    background: #2f2f2f;
-    border-radius: 1.11vh;
-    border: 0.37vh solid #fff;
+    display: inline-flex;
+    padding: 1.19792vw 1.875vw 1.17708vw 1.19792vw;
+    align-items: flex-start;
+    gap: 1.8vw;
+    border-radius: 0.78125vw;
+    border: 0.26042vw solid transparent;
+    backdrop-filter: blur(1.15104vw);
     cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+.button:hover {
+    transform: scale(1.05);
 }
 
 .button-icon {
-    width: 4.85vh;
-    height: 4.85vh;
+    width: 2.86458vw;
+    height: 2.86458vw;
 }
 
 .button-text {
     margin: 0;
-    font-family: 'Anton', sans-serif;
-    font-size: 3vh;
-    color: #fff;
+    font-family: 'Inter', sans-serif;
+    color: #FFF;
+    font-size: 2.08333vw;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    font-variant: all-small-caps;
+
 }
